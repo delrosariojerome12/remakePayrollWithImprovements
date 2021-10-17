@@ -1,5 +1,6 @@
 const menuBar = document.getElementById("menu-bar");
 const linksCon = document.querySelector(".links-con");
+let ctr = 0;
 
 menuBar.addEventListener("click", () => {
   linksCon.classList.toggle("drop");
@@ -81,8 +82,6 @@ userInputs.forEach((inputs) =>
             e.currentTarget.nextElementSibling.textContent =
               "Field Cannot be Emptied!";
           } else {
-            // e.currentTarget.value = "";
-            // e.currentTarget.placeholder =
             //   "Invalid Value! ID Should Be 4 Digit Numbers";
             e.currentTarget.nextElementSibling.textContent =
               "Invalid Value! ID Should Be 4 Digit Numbers";
@@ -292,6 +291,8 @@ function clearOption() {
   allOutputs.forEach((output) => {
     output.value = "";
   });
+  computeBtn.disabled = true;
+  ctr = 0;
 }
 // compute btn
 const computeBtn = document.getElementById("compute");
@@ -412,21 +413,29 @@ computeBtn.addEventListener("click", () => {
       designation.disabled = false;
   }
 });
-
+// check if all complete
 function checkFields() {
-  const allInputs = document.querySelectorAll(".select, .user-input");
-  let ctr = 0;
-  allInputs.forEach((inputs) => {
-    if (inputs.value !== "") {
-      ctr++;
-      if (ctr === 6) {
-        console.log("test");
-        computeBtn.disabled = false;
-      }
-    }
-  });
-}
+  const eNum = document.getElementById("employee-number");
+  const eName = document.getElementById("employee-name");
+  const college = document.getElementById("college");
+  const department = document.getElementById("department");
+  const designation = document.getElementById("designation");
+  const days = document.getElementById("days");
 
+  if (
+    days.value !== "" &&
+    designation.value !== "" &&
+    eNum.value !== "" &&
+    eName.value !== "" &&
+    college.value !== "" &&
+    department.value !== ""
+  ) {
+    computeBtn.disabled = false;
+  } else {
+    computeBtn.disabled = true;
+  }
+}
+// pay roll deduction
 function checkSSS(grossPay) {
   let grossPayInt = parseFloat(grossPay.value.slice(1));
   if (grossPayInt >= 19750) {

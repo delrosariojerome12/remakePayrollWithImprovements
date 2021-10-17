@@ -344,7 +344,7 @@ select {
     width: 300px;
   }
   .content {
-    grid-template-rows: 35vh 100vh 80vh;
+    grid-template-rows: 35vh 120vh 80vh;
   }
   .inputs {
     width: 80%;
