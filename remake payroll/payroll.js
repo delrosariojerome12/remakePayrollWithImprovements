@@ -288,6 +288,10 @@ function clearOption() {
   for (let index = 0; index < cloneOption.length; index++) {
     cloneOption[index].remove();
   }
+  const allOutputs = document.querySelectorAll(".salary-information input");
+  allOutputs.forEach((output) => {
+    output.value = "";
+  });
 }
 // compute btn
 const computeBtn = document.getElementById("compute");
