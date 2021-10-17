@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="payroll.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen&family=Parisienne&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/b735554243.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main class="container">
+      <nav>
+        <div class="logo">
+          <div class="logo-img"></div>
+          <h1>Colegio De San Gabriel Arcangel</h1>
+        </div>
+        <div class="menu-bar">
+          <i id="menu-bar" class="fas fa-bars"></i>
+        </div>
+        <div class="links-con">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="payroll.html">PayRoll</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="content">
+        <header>
+          <h1>Payroll Register</h1>
+          <h4 id="day"></h4>
+          <h4 id="hour"></h4>
+        </header>
+        <div id="x" class="employee-information">
+          <h3>Employee Information</h3>
+          <div class="inputs">
+            <!-- number -->
+            <div class="cons">
+              <label for="number">Employee Number</label>
+              <input
+                placeholder="Employee Number"
+                type="text"
+                name="number"
+                id="employee-number"
+                class="user-input"
+                autocomplete="off"
+              />
+              <span class="error"></span>
+            </div>
+            <!-- name -->
+            <div class="cons">
+              <label for="name">Employee Name</label>
+              <input
+                placeholder="Employee Name"
+                type="text"
+                name="name"
+                id="employee-name"
+                class="user-input"
+                autocomplete="off"
+              />
+              <span class="error"></span>
+            </div>
+            <!-- college -->
+            <label for="college">College</label>
+            <select required class="select" name="college" id="college">
+              <option selected disabled value="">Select College</option>
+              <option value="CCSE">
+                College of Computer Studies and Engineering
+              </option>
+              <option value="COE">College of Education</option>
+              <option value="COMEAC">College of Medical Allied Courses</option>
+              <option value="COB">College of Business</option>
+              <option value="CLASS">
+                College of Liberal Arts and Social Sciences
+              </option>
+            </select>
+            <!-- department -->
+            <label for="department">Department</label>
+            <select disabled class="select" name="department" id="department">
+              <option disabled selected value="">Select Department</option>
+            </select>
+            <!-- designation -->
+            <label for="designation">Designation</label>
+            <select class="select" name="designation" id="designation">
+              <option disabled selected value="">Select Designation</option>
+              <option value="Dean">Dean</option>
+              <option value="Program Head">Program Head</option>
+              <option value="Assistant Professor">Assistant Professor</option>
+              <option value="Instructor">Instructor</option>
+            </select>
+            <!-- days present -->
+            <div class="cons">
+              <label for="days">Days Present</label>
+              <input
+                placeholder="Number Of Days"
+                class="user-input"
+                type="text"
+                name="days"
+                id="days"
+              />
+              <span class="error"></span>
+            </div>
+            <div class="btn-con">
+              <button id="clear">Clear Fields</button>
+              <button disabled id="compute">Compute Payment</button>
+            </div>
+          </div>
+        </div>
+        <div class="salary-information">
+          <div class="rates">
+            <h3>Rates and Gross Pay</h3>
+            <div class="output-con">
+              <label for="">Monthly</label>
+              <input disabled type="text" id="monthly" />
+            </div>
+            <div class="output-con">
+              <label for="">Daily</label>
+              <input disabled type="text" id="daily" />
+            </div>
+            <div class="output-con">
+              <label for="">Hourly Rates</label>
+              <input disabled type="text" id="hourly" />
+            </div>
+            <div class="output-con">
+              <label for="">Gross Pay</label>
+              <input disabled type="text" id="grossPay" />
+            </div>
+            <div class="output-con">
+              <label for="">Net Pay</label>
+              <input disabled type="text" id="netPay" />
+            </div>
+          </div>
+          <div class="deduction">
+            <h3>Statutory Deduction</h3>
+            <div class="output-con">
+              <label for="">HMDF Contribution</label>
+              <input disabled type="text" id="hmdf" />
+            </div>
+            <div class="output-con">
+              <label for="">PhilHealth Contribution</label>
+              <input disabled type="text" id="philhealth" />
+            </div>
+            <div class="output-con">
+              <label for="">SSS Contribution</label>
+              <input disabled type="text" id="sss" />
+            </div>
+            <div class="output-con">
+              <label for="">Total Deductions</label>
+              <input disabled type="text" id="totalDeduction" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="payroll.js"></script>
+  </body>
+</html>

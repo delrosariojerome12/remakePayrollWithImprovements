@@ -1,0 +1,370 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* font family */
+  /* all small */
+  --openSans: "Open Sans", sans-serif;
+  /* big */
+  --ubuntu: "Ubuntu", sans-serif;
+  /* name title */
+  --title: "Parisienne", cursive;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 1.8rem;
+  font-family: var(--ubuntu);
+}
+/* main container */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(135vh, auto);
+  /* border: solid 10px #000; */
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #5c081e;
+  color: #fff;
+  z-index: 999;
+  width: 100%;
+  height: 13vh;
+}
+nav > * {
+  /* border: solid 1px #000; */
+  height: 100%;
+  list-style: none;
+  display: flex;
+}
+.logo {
+  width: 90%;
+  font-family: var(--title);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.logo h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo > * {
+  margin-right: 1rem;
+}
+.logo-img {
+  height: 80px;
+  width: 100px;
+  /* border: solid 1px #000; */
+  background: url(img/logo-removebg-preview.png) no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.menu-bar {
+  width: 10%;
+  align-items: center;
+  justify-content: center;
+}
+.menu-bar i {
+  font-size: 2.2rem;
+  transition: all 0.2s ease-in-out;
+}
+.links-con {
+  position: absolute;
+  list-style: none;
+  top: 100%;
+  left: 0%;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  /* border: #000 solid 1px; */
+  transition: all ease-in-out 0.3s;
+  padding: 0 1rem;
+  z-index: 2;
+  background-color: #5c081e;
+}
+ul {
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  width: 100%;
+}
+ul li a {
+  padding: 1.5rem;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 1rem;
+}
+ul li a:hover {
+  background-color: #fff;
+  color: #3b1a11;
+  font-weight: 500;
+}
+.drop {
+  height: 170px;
+  padding: 1rem;
+}
+.rotate {
+  transform: rotate(90deg);
+}
+.content {
+  /* border: solid 10px #000; */
+  width: 100%;
+  display: grid;
+  grid-template-rows: 35vh 190vh;
+}
+.content > * {
+  border: solid 1px #000;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 70%;
+  margin-top: auto;
+}
+.employee-information {
+  display: grid;
+  grid-template-rows: minmax(10%, auto) minmax(90%, auto);
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: #000 solid 1px !important;
+}
+
+.inputs {
+  border: solid 1px #000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+  /* justify-content: center; */
+}
+.inputs > * {
+  height: fit-content;
+}
+.cons {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  /* border: #000 solid 1px; */
+}
+.cons > label {
+  /* border: #000 solid 1px; */
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.error {
+  position: absolute;
+  top: 72%;
+  left: 0;
+  /* transform: translateX(10%); */
+  color: red;
+  font-size: 1.5rem;
+}
+.inputs input,
+select {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+}
+.inputs > label {
+  margin-bottom: 1rem;
+}
+.btn-con {
+  /* border: #000 solid 1px; */
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-top: 1rem;
+  width: 100%;
+  height: 120px;
+  margin-top: 2rem;
+}
+
+.btn-con button {
+  background-color: #5c081e;
+  color: #fff;
+  font-weight: 400;
+  outline: none;
+  border-radius: 1rem;
+  border: transparent 1px solid;
+  cursor: pointer;
+  width: 160px;
+  padding: 1.2rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn-con button:hover {
+  background-color: #fff;
+  border: #3b1a11 solid 1px;
+  color: #3b1a11;
+  font-weight: 700;
+}
+/* output */
+/* salary */
+.salary-information {
+  padding: 1rem;
+}
+.rates,
+.deduction {
+  border: #000 solid 1px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50%;
+  width: 100%;
+}
+.output-con {
+  border: #000 solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+.output-con > input,
+.output-con > select {
+  padding: 1rem 1.5rem;
+  width: 200px;
+}
+/* responsive design for width: 350px - 1080px or more,  height: 460px - 700px*/
+/* height */
+/* @media screen and (min-height: 500px) {
+  .content {
+    grid-template-rows: 35vh 170vh;
+  }
+}
+@media screen and (min-height: 550px) {
+  .content {
+    grid-template-rows: 35vh 160vh;
+  }
+}
+@media screen and (min-height: 570px) {
+  .content {
+    grid-template-rows: 35vh 150vh;
+  }
+}
+@media screen and (min-height: 600px) {
+  .content {
+    grid-template-rows: 35vh 140vh;
+  }
+}
+@media screen and (min-height: 650px) {
+  .content {
+    grid-template-rows: 35vh 130vh;
+  }
+}
+@media screen and (min-height: 700px) {
+  .content {
+    grid-template-rows: 35vh 125vh 140vh;
+  }
+}
+@media screen and (min-height: 750px) {
+  .content {
+    grid-template-rows: 35vh 100vh 140vh;
+  }
+} */
+/* width */
+@media screen and (min-width: 500px) {
+  .inputs {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-con {
+    flex-direction: row;
+  }
+  .rates,
+  .deduction {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    justify-content: space-between;
+  }
+  .logo {
+    /* border: solid 1px #fff; */
+    width: 70%;
+  }
+  .logo h1 {
+    letter-spacing: 0.5rem;
+    /* font-size: 2.4rem; */
+  }
+  .links-con {
+    position: static;
+    list-style: none;
+    top: 0;
+    left: 0%;
+    /* border: solid 1px #fff; */
+    height: 100%;
+    width: 30%;
+  }
+  ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .menu-bar {
+    display: none;
+  }
+  .box-con {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 2rem;
+  }
+  .svg {
+    height: 300px;
+    width: 300px;
+  }
+  .content {
+    grid-template-rows: 35vh 120vh 80vh;
+  }
+  .inputs {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .salary-information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    gap: 2rem;
+  }
+  .rates,
+  .deduction {
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    height: 500px;
+  }
+}
